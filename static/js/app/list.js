@@ -16,10 +16,10 @@ mui.plusReady(function(){
 	// 获取列表
 	initHelp();
 	
-	// 右滑菜单
-	window.addEventListener('swiperight', function(){
-		qiao.h.indexPage().evalJS("opMenu();");
-	});
+//	// 右滑菜单
+//	window.addEventListener('swiperight', function(){
+//		qiao.h.indexPage().evalJS("opMenu();");
+//	});
 	
 	// 查看详情
 	qiao.on('#todolist li', 'tap', function(){
@@ -30,10 +30,10 @@ mui.plusReady(function(){
 	qiao.on('.doneBtn', 'tap', function(){
 		var $li = $(this).parent().parent();
 		var id = $li.data('id');
-		$li.remove();
-		showList($('#todolist'));
-		
-		qiao.h.fire('menu', 'doneItem', {todoId:id});
+//		$li.remove();
+//		showList($('#todolist'));
+		console.log(id);
+		qiao.h.fire('calculate', 'calculateItem', {todoId:id});
 		return false;
 	});
 	

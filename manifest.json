@@ -183,7 +183,8 @@
 				"refer": [
 					"views/add.html",
 					"views/detail.html",
-					"views/menu.html"
+					"views/menu.html",
+					"views/calculate.html"
 				]
 			},
 			"views/add.html": {
@@ -243,6 +244,14 @@
 					"static/css/app/menu.css"
 				],
 				"refer": []
+			},
+			"views/calculate.html": {
+				"resources": [
+					"static/js/app/calculate.js",
+					"static/css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
 			}
 		},
 		"idle": {
