@@ -32,8 +32,9 @@ mui.plusReady(function(){
 		var id = $li.data('id');
 //		$li.remove();
 //		showList($('#todolist'));
-		console.log(id);
-		qiao.h.fire('calculate', 'calculateItem', {todoId:id});
+		initList();
+//		console.log(id);
+		qiao.h.fire('calculate', 'calculateItem', {itemid:id});
 		return false;
 	});
 	
@@ -89,7 +90,7 @@ function genLi(data){
 	var li = 
 		'<li class="mui-table-view-cell" id="todoli_' + id + '" data-id="' + id + '">' +
 			'<div class="mui-slider-right mui-disabled">' + 
-				'<a class="mui-btn mui-btn-red doneBtn">完成</a>' +
+				'<a class="mui-btn mui-btn-red doneBtn">calculate</a>' +
 			'</div>' + 
 			'<div class="mui-slider-handle">' + 
 				'<div class="mui-media-body">' + 

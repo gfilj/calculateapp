@@ -17,6 +17,9 @@ function detailItemHandler(event){
 
 	var detailId = event.detail.id;
 	var sql = 'select * from t_plan_day_todo where id=' + detailId;
+	
+	
+	
 	qiao.h.query(db, sql, function(res){
 		if(res.rows.length > 0){
 			var data = res.rows.item(0);
@@ -26,4 +29,17 @@ function detailItemHandler(event){
 			qiao.h.show('detail', 'slide-in-right', 300);
 		}
 	});
+	
+	var sqlNumber = 'select * from t_number_detail where id=' + detailId;
+	console.log(sqlNumber);
+	var numberArr = new Array();
+	qiao.h.query(db, sqlNumber, function(resNumer){
+		if(resNumer.rows.length > 0){
+			for (i = 0; i < resNumer.rows.length; i++) {
+				numberArr.push(resNumer.rows.item(i).plan_number);
+			}		
+		};
+		$('#detailNumberContent').html(numberArr.join("-"));
+	});
+	
 }
